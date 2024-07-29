@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olympics 2024 - Schedule</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Olympics 2024 Logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="athletes.html">Athletes</a></li>
+                <li><a href="schedule.html">Schedule</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Schedule</h1>
+        <p>Check out the full schedule of events for the Olympics 2024. Plan your viewing experience and don't miss a moment of the action.</p>
+        <div>
+            <label for="dateFilter">Filter by Date:</label>
+            <input type="date" id="dateFilter">
+        </div>
+        <ul id="scheduleList">
+            <li class="schedule-item" data-date="2024-07-26">Opening Ceremony</li>
+            <li class="schedule-item" data-date="2024-07-27">100m Dash - Heats</li>
+            <li class="schedule-item" data-date="2024-07-28">200m Freestyle - Finals</li>
+            <li class="schedule-item" data-date="2024-07-29">Artistic Gymnastics - Qualifiers</li>
+            <!-- Add more events as needed -->
+        </ul>
+    </main>
+    <footer>
+        <p>&copy; 2024 Olympics. All rights reserved.</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const dateFilter = document.getElementById('dateFilter');
+            const scheduleList = document.getElementById('scheduleList');
+            const scheduleItems = scheduleList.getElementsByClassName('schedule-item');
+
+            dateFilter.addEventListener('change', function() {
+                const selectedDate = dateFilter.value;
+
+                for (let i = 0; i < scheduleItems.length; i++) {
+                    const item = scheduleItems[i];
+                    const itemDate = item.getAttribute('data-date');
+
+                    if (selectedDate === '' || itemDate === selectedDate) {
+                        item.style.display = 'list-item';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+

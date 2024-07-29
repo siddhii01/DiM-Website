@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olympics 2024 - Events</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Olympics 2024 Logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="athletes.html">Athletes</a></li>
+                <li><a href="schedule.html">Schedule</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Events</h1>
+        <p>Explore the wide range of sports and events at the Olympics 2024. From athletics to swimming, each event promises thrilling moments and outstanding performances.</p>
+        <p>Keep an eye on your favorite sports and athletes as they compete for the coveted Olympic medals.</p>
+        <p>The Olympic Games are a celebration of human achievement and a showcase of the best athletes in the world. Be a part of this incredible journey.</p>
+        <div>
+            <label for="eventFilter">Filter Events:</label>
+            <select id="eventFilter">
+                <option value="all">All</option>
+                <option value="athletics">Athletics</option>
+                <option value="swimming">Swimming</option>
+                <option value="gymnastics">Gymnastics</option>
+                <!-- Add more options as needed -->
+            </select>
+        </div>
+        <ul id="eventList">
+            <li class="event-item" data-category="athletics">100m Dash</li>
+            <li class="event-item" data-category="swimming">200m Freestyle</li>
+            <li class="event-item" data-category="gymnastics">Artistic Gymnastics</li>
+            <!-- Add more events as needed -->
+        </ul>
+    </main>
+    <footer>
+        <p>&copy; 2024 Olympics. All rights reserved.</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const eventFilter = document.getElementById('eventFilter');
+            const eventList = document.getElementById('eventList');
+            const eventItems = eventList.getElementsByClassName('event-item');
+
+            eventFilter.addEventListener('change', function() {
+                const selectedCategory = eventFilter.value;
+
+                for (let i = 0; i < eventItems.length; i++) {
+                    const item = eventItems[i];
+                    const itemCategory = item.getAttribute('data-category');
+
+                    if (selectedCategory === 'all' || itemCategory === selectedCategory) {
+                        item.style.display = 'list-item';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olympics 2024</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Olympics 2024 Logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="athletes.html">Athletes</a></li>
+                <li><a href="schedule.html">Schedule</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Welcome to the Olympics 2024</h1>
+        <p>The 2024 Summer Olympics are set to take place in the magnificent city of Paris, France. This global event, celebrated every four years, promises to bring together athletes from every corner of the world to compete in a spectacular display of skill, endurance, and sportsmanship. Paris, with its rich history and vibrant culture, offers an enchanting setting for the Games. The city’s iconic landmarks and historic venues will serve as the backdrop for an extraordinary celebration of human achievement and international unity.</p>
+        <p>This year’s Olympics will feature an exciting mix of traditional and newly introduced sports. Athletes will compete in over 30 sports, ranging from the classic track and field events to newer additions like surfing and skateboarding. Each sport brings its own unique challenges and moments of thrill, ensuring that there is something for every type of sports fan. From the heart-pounding speed of the sprints to the grace and precision of gymnastics, the Games will showcase the peak of athletic performance and dedication.</p>
+        <p>As the opening ceremony approaches, anticipation is building among fans and participants alike. The ceremony will mark the official start of the Games and will be a grand celebration of cultures and sportsmanship. Throughout the event, spectators will witness breathtaking performances, inspiring stories of perseverance, and the joy of seeing athletes achieve their dreams. Stay tuned for updates, schedules, and exclusive insights as we count down to the most anticipated sporting event of the year.</p>
+        <button id="learnMoreBtn">Learn More</button>
+        <div id="moreInfo" style="display: none;">
+            <p>The 2024 Summer Olympics, officially known as the Games of the XXXIII Olympiad, will be held from July 26 to August 11, 2024. Paris is making history by hosting the Olympics for the third time, having previously done so in 1900 and 1924. The Games will feature both traditional events and new sports, reflecting the evolving nature of the Olympics. This year, viewers can look forward to exciting new additions such as climbing and breaking, which will add to the dynamic and diverse nature of the competition.</p>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Olympics. All rights reserved.</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const learnMoreBtn = document.getElementById('learnMoreBtn');
+            const moreInfo = document.getElementById('moreInfo');
+
+            learnMoreBtn.addEventListener('click', function() {
+                if (moreInfo.style.display === 'none') {
+                    moreInfo.style.display = 'block';
+                    learnMoreBtn.textContent = 'Show Less';
+                } else {
+                    moreInfo.style.display = 'none';
+                    learnMoreBtn.textContent = 'Learn More';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
